@@ -63,7 +63,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="8">
 
-                <ImageButton
+                    <ImageButton
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:background="@drawable/join_selector"
