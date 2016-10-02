@@ -1,6 +1,7 @@
-package com.example.ehsan.arioroidProject1;
+package com.example.ehsan.arioroidproject1;
 
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,10 +9,26 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    private WifiManager wifiManager;
+    private boolean wifistatus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        wifiManager = (WifiManager) this.getSystemService(WIFI_SERVICE);
+        wifistatus = wifiManager.isWifiEnabled();
+
+        if(!wifistatus)
+            wifiManager.setWifiEnabled(true);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+      wifiManager = (WifiManager) this.getSystemService(WIFI_SERVICE);
+        if(!wifistatus)
+            wifiManager.setWifiEnabled(false);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.ehsan.arioroidProject1;
+package com.example.ehsan.arioroidproject1;
 
 import org.junit.Test;
 
